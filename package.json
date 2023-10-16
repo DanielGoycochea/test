@@ -1,10 +1,14 @@
 {
-  "name": "@goyco/my-react-typescript-package",
+  "name": "my-react-typescript-package-goyco",
   "version": "0.0.1",
   "description": "My first react typescript package",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielGoycochea/test.git"
+  },
   "scripts": {
     "build": "rollup -c --bundleConfigAsCjs",
     "build:esm": "tsc",
