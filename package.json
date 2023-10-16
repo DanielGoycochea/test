@@ -1,12 +1,12 @@
 {
-  "name": "my-react-typescript-package",
+  "name": "@goyco/my-react-typescript-package",
   "version": "0.0.1",
   "description": "My first react typescript package",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
   "scripts": {
-    "build": "npm run build:esm && npm run build:cjs",
+    "build": "rollup -c --bundleConfigAsCjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "eslint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
@@ -16,7 +16,8 @@
     "prepublishOnly": "npm test && npm run prettier && npm run eslint"
   },
   "peerDependencies": {
-    "react": ">=14"
+    "react": ">=16",
+    "react-dom": ">=16"
   },
   "files": [
     "dist",
@@ -31,12 +32,16 @@
   "author": "Bamba",
   "license": "UNLICENSED",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.5",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.5",
     "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/react": "^13.3.0",
     "@types/babel__core": "^7.20.2",
     "@types/jest": "^29.5.5",
     "@types/node": "^20.8.5",
     "@types/react": "^18.0.12",
+    "@types/styled-components": "^5.1.28",
     "@typescript-eslint/eslint-plugin": "^5.27.1",
     "@typescript-eslint/parser": "^5.27.1",
     "eslint": "^8.17.0",
@@ -52,7 +57,13 @@
     "prettier": "^2.6.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "rollup": "^4.0.2",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-terser": "^7.0.2",
+    "styled-components": "^6.0.9",
     "ts-jest": "^28.0.4",
+    "tslib": "^2.6.2",
     "typescript": "^4.7.3"
   },
   "lint-staged": {
