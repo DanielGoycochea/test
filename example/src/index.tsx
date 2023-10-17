@@ -1,19 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { MyCounter } from 'my-react-typescript-package'
+import { Typing } from 'my-react-typescript-package-goyco'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
-
 root.render(
   <React.StrictMode>
     <div>
-      <h2>Default counter</h2>
-      <MyCounter />
-    </div>
-    <hr />
-    <div>
-      <h2>Counter with predefined value</h2>
-      <MyCounter value={0} />
+      <h2>
+        Hi, i am a <Typing text={['software developer', 'writer']} speed={400} />
+      </h2>
     </div>
   </React.StrictMode>,
 )
